@@ -3,7 +3,6 @@ package com.raul.nymble.serviceImpl;
 import com.raul.nymble.DTO.TravelPackageDTO;
 import com.raul.nymble.model.Itinerary;
 import com.raul.nymble.model.PackageEnrollment;
-import com.raul.nymble.model.Passenger;
 import com.raul.nymble.model.TravelPackage;
 import com.raul.nymble.repository.*;
 import com.raul.nymble.service.TravelPackageService;
@@ -35,19 +34,38 @@ public class TravelPackageServiceImpl implements TravelPackageService {
             travelPackageDTO.setId(travelPackage.getId());
             travelPackageDTO.setName(travelPackage.getName());
             travelPackageDTO.setCapacity(travelPackage.getCapacity());
-
-            List<Itinerary> itineraryList = itineraryRepository.findAll(getItineraries(travelPackage.getId()));
-            itineraryList.forEach(itinerary -> {
-                destinationRepository.findById(itinerary.getDestinationId()).ifPresent(travelPackageDTO::addDestination);
-            });
-
-            List<PackageEnrollment> passengerList = packageEnrollmentRepository.findAll(getPassengers(travelPackage.getId()));
-            passengerList.forEach(packageEnrollment -> {
-                passengerRepository.findById(packageEnrollment.getCustomerId()).ifPresent(travelPackageDTO::addPassenger);
-            });
+            addItinerary(travelPackageDTO, travelPackage.getId());
+            addPassenger(travelPackageDTO, travelPackage.getId());
             return travelPackageDTO;
         }).collect(Collectors.toList());
     }
+
+    private void addItinerary(TravelPackageDTO travelPackageDTO, Long id) {
+        List<Itinerary> itineraryList = itineraryRepository.findAll(getItineraries(id));
+        itineraryList.forEach(itinerary -> {
+            destinationRepository.findById(itinerary.getDestinationId()).ifPresent(travelPackageDTO::addDestination);
+        });
+    }
+
+    private void addPassenger(TravelPackageDTO travelPackageDTO, Long id) {
+        List<PackageEnrollment> passengerList = packageEnrollmentRepository.findAll(getPassengers(id));
+        passengerList.forEach(packageEnrollment -> {
+            passengerRepository.findById(packageEnrollment.getCustomerId()).ifPresent(travelPackageDTO::addPassenger);
+        });
+    }
+
+    @Override
+    public TravelPackageDTO getTravelPackageById(Long id) {
+        TravelPackage travelPackage = travelPackageRepository.findById(id).get();
+        TravelPackageDTO travelPackageDTO = new TravelPackageDTO();
+        travelPackageDTO.setId(travelPackage.getId());
+        travelPackageDTO.setName(travelPackage.getName());
+        travelPackageDTO.setCapacity(travelPackage.getCapacity());
+        addItinerary(travelPackageDTO, travelPackage.getId());
+        addPassenger(travelPackageDTO, travelPackage.getId());
+        return travelPackageDTO;
+    }
+
     static Specification<Itinerary> getItineraries(Long id) {
         return (itinerary, cq, cb) -> cb.equal(itinerary.get("travelPackageId"), id);
     }

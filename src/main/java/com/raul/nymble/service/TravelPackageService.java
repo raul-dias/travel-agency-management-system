@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface TravelPackageService {
     List<TravelPackageDTO> getAllTravelPackages();
+
+    TravelPackageDTO getTravelPackageById(Long id);
 }
