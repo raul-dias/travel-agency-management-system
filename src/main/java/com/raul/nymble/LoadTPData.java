@@ -34,8 +34,8 @@ public class LoadTPData {
             log.info("Itineraires" + itrRepo.save(new Itinerary(2L, 5L)));
             log.info("-------------------------Adding Passengers----------------------------");
             log.info("Passengers" + passRepo.save(new Passenger("Raul",123, 1, 999L)));
-            log.info("Passengers" + passRepo.save(new Passenger("Raul",987, 2, 999L)));
-            log.info("Passengers" + passRepo.save(new Passenger("Raul",159, 3, 999L)));
+            log.info("Passengers" + passRepo.save(new Passenger("Jaya",987, 2, 999L)));
+            log.info("Passengers" + passRepo.save(new Passenger("Giulia",159, 3, 999L)));
             log.info("-------------------------Adding Enrollments----------------------------");
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(1L, 1L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(1L, 2L)));
@@ -43,7 +43,7 @@ public class LoadTPData {
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(2L, 2L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(2L, 3L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 2L)));
-            log.info("Enrollments" + packRepo.save(new PackageEnrollment(1L, 3L)));
+            log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 3L)));
 
         };
     }
