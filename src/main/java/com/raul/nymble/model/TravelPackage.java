@@ -15,12 +15,11 @@ import lombok.Data;
 public class TravelPackage {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String name;
     private int capacity;
     protected TravelPackage (){ }
-    public TravelPackage(int id, String name, int capacity) {
-        this.id = id;
+    public TravelPackage(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
     }

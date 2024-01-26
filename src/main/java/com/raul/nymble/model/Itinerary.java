@@ -12,13 +12,13 @@ import lombok.Data;
 public class Itinerary {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
-    private int travelPackageId;
-    private int destinationId;
+    private Long id;
+    private Long travelPackageId;
+    private Long destinationId;
 
     protected Itinerary() { }
 
-    public Itinerary(int travelPackageId, int destinationId) {
+    public Itinerary(Long travelPackageId, Long destinationId) {
         this.travelPackageId = travelPackageId;
         this.destinationId = destinationId;
     }

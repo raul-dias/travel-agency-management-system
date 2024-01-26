@@ -6,23 +6,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-/**
- * This entity is maintained to hold a record between customers and
- * the activities they have signed up for.
- */
 @Entity
 @Data
-public class Enrollment {
+public class PackageEnrollment {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private Long customerId;
-    private Long activityId;
+    private Long travelPackageId;
 
-    protected Enrollment() { }
+    protected PackageEnrollment() { }
 
-    public Enrollment(Long customerId, Long activityId) {
+    public PackageEnrollment(Long customerId, Long travelPackageId) {
         this.customerId = customerId;
-        this.activityId = activityId;
+        this.travelPackageId = travelPackageId;
     }
 }

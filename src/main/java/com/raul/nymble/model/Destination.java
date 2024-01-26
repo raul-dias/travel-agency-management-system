@@ -14,7 +14,7 @@ import lombok.Data;
 public class Destination {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String name;
 
     protected Destination() { }
