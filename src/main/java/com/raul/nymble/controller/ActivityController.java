@@ -34,7 +34,7 @@ public class ActivityController {
 
     @PostMapping("/activity")
     public void saveActivity(@RequestBody Activity activity){
-        activityService.save(activity);
+        activityService.save(new Activity(activity.getName(), activity.getDescription(), activity.getCost(), activity.getCapasity(), activity.getDestinationId()));
     }
 
     @PutMapping("/activity/{id}")

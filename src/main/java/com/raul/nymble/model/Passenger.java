@@ -14,7 +14,7 @@ import lombok.Data;
 @Entity
 @Data
 public class Passenger {
-    private static enum tierEnum {
+    public static enum tierEnum {
         STANDARD, GOLD, PREMIUM
     }
     @Id
@@ -26,6 +26,13 @@ public class Passenger {
     private Long balance;
 
     protected Passenger() { }
+
+    public Passenger(Passenger passenger) {
+        this.name = passenger.name;
+        this.number = passenger.number;
+        this.tier = passenger.tier;
+        this.balance = passenger.balance;
+    }
 
     public Passenger(String name, int number, int tier, Long balance) {
         this.name = name;

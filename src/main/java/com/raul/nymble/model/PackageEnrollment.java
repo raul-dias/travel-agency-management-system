@@ -12,13 +12,13 @@ public class PackageEnrollment {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private Long customerId;
+    private Long passengerId;
     private Long travelPackageId;
 
     protected PackageEnrollment() { }
 
-    public PackageEnrollment(Long customerId, Long travelPackageId) {
-        this.customerId = customerId;
+    public PackageEnrollment(Long passengerId, Long travelPackageId) {
+        this.passengerId = passengerId;
         this.travelPackageId = travelPackageId;
     }
 }

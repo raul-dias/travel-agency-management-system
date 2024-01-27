@@ -16,13 +16,13 @@ public class Enrollment {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private Long customerId;
+    private Long passengerId;
     private Long activityId;
 
     protected Enrollment() { }
 
-    public Enrollment(Long customerId, Long activityId) {
-        this.customerId = customerId;
+    public Enrollment(Long passengerId, Long activityId) {
+        this.passengerId = passengerId;
         this.activityId = activityId;
     }
 }

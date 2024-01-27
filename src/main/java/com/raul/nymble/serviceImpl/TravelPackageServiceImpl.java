@@ -64,7 +64,7 @@ public class TravelPackageServiceImpl implements TravelPackageService {
     private void addPassenger(TravelPackageDTO travelPackageDTO, Long id) {
         List<PackageEnrollment> passengerList = packageEnrollmentRepository.findAll(getPassengers(id));
         passengerList.forEach(packageEnrollment -> {
-            passengerRepository.findById(packageEnrollment.getCustomerId()).ifPresent(travelPackageDTO::addPassenger);
+            passengerRepository.findById(packageEnrollment.getPassengerId()).ifPresent(travelPackageDTO::addPassenger);
         });
     }
 
