@@ -3,9 +3,7 @@ package com.raul.nymble.controller;
 import com.raul.nymble.DTO.TravelPackageDTO;
 import com.raul.nymble.service.TravelPackageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,15 +15,22 @@ public class TravelPackageController {
 
     @GetMapping("/travelPackage")
     public List<TravelPackageDTO> travelPackages(){
-
         return travelPackageService.getAllTravelPackages();
-    }
-    public void addTravelPackage(){
-
     }
     @GetMapping("/travelPackage/{id}")
     public TravelPackageDTO getTravelPackage(@PathVariable Long id){
-
         return travelPackageService.getTravelPackageById(id);
+    }
+    @PostMapping("/travelPackage")
+    public void addTravelPackage(@RequestBody TravelPackageDTO travelPackageDTO){
+        travelPackageService.addTravelPackage(travelPackageDTO);
+    }
+    @DeleteMapping("/travelPackage/{id}")
+    public void deleteTravelPackage(@PathVariable Long id){
+        travelPackageService.deleteTravelPackage(id);
+    }
+    @PutMapping("/travelPackage/{id}")
+    public void updateTravelPackage(@RequestBody TravelPackageDTO travelPackageDTO, @PathVariable Long id){
+        travelPackageService.updateTravelPackage(travelPackageDTO, id);
     }
 }
