@@ -13,7 +13,7 @@ public class LoadTPData {
     private static final Logger log = LoggerFactory.getLogger(LoadTPData.class);
 
     @Bean
-    CommandLineRunner initDatabase(TravelPackageRepository TPrepo, DestinationRepository desRepo, ItineraryRepository itrRepo, PassengerRepository passRepo, PackageEnrollmentRepository packRepo) {
+    CommandLineRunner initDatabase(TravelPackageRepository TPrepo, DestinationRepository desRepo, ItineraryRepository itrRepo, PassengerRepository passRepo, PackageEnrollmentRepository packRepo, ActivityRepository activityRepo) {
         return args -> {
             log.info("Preloading " + TPrepo.save(new TravelPackage("Lovely Goa", 10)));
             log.info("Preloading " + TPrepo.save(new TravelPackage("Wonderful Goa", 20)));
@@ -44,7 +44,10 @@ public class LoadTPData {
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(2L, 3L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 2L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 3L)));
-
+            log.info("-------------------------Adding Activities----------------------------");
+            log.info("Activities" + activityRepo.save(new Activity("Bunjee Jumping", "Jumping from Bunjees", 20L, 59, 1)));
+            log.info("Activities" + activityRepo.save(new Activity("Horse Riding", "Riding Horses", 20L, 59, 1)));
+            log.info("Activities" + activityRepo.save(new Activity("Dirt Bike Riding", "Riding Dirt Bikes", 20L, 59, 2)));
         };
     }
 }
