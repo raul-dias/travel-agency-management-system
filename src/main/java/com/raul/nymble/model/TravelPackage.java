@@ -18,7 +18,7 @@ public class TravelPackage {
     private Long id;
     private String name;
     private int capacity;
-    protected TravelPackage (){ }
+    public TravelPackage(){ }
     public TravelPackage(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;

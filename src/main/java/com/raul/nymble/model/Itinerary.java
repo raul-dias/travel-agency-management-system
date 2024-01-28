@@ -16,7 +16,7 @@ public class Itinerary {
     private Long travelPackageId;
     private Long destinationId;
 
-    protected Itinerary() { }
+    public Itinerary() { }
 
     public Itinerary(Long travelPackageId, Long destinationId) {
         this.travelPackageId = travelPackageId;

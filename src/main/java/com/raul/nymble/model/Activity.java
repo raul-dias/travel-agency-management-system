@@ -23,7 +23,7 @@ public class Activity {
     private int bookedCapasity;
     private Long destinationId;
 
-    protected Activity() { }
+    public Activity() { }
 
     public Activity(String name, String description, Long cost, int capasity, Long destinationId) {
         this.name = name;

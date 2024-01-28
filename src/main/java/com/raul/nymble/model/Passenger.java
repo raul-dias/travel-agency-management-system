@@ -25,7 +25,7 @@ public class Passenger {
     private tierEnum tier;
     private Long balance;
 
-    protected Passenger() { }
+    public Passenger() { }
 
     public Passenger(Passenger passenger) {
         this.name = passenger.name;

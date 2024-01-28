@@ -19,7 +19,7 @@ public class Enrollment {
     private Long passengerId;
     private Long activityId;
 
-    protected Enrollment() { }
+    public Enrollment() { }
 
     public Enrollment(Long passengerId, Long activityId) {
         this.passengerId = passengerId;

@@ -15,7 +15,7 @@ public class PackageEnrollment {
     private Long passengerId;
     private Long travelPackageId;
 
-    protected PackageEnrollment() { }
+    public PackageEnrollment() { }
 
     public PackageEnrollment(Long passengerId, Long travelPackageId) {
         this.passengerId = passengerId;
