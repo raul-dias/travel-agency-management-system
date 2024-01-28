@@ -47,5 +47,10 @@ public class ActivityController {
     public void deleteActivity(@PathVariable Long id){
         activityService.delete(id);
     }
+
+    @PostMapping("/activity/{id}/enroll")
+    public void addPassengerToActivity(@PathVariable Long id, @RequestBody Long passengerId){
+        activityService.addPassengerToActivity(id, passengerId);
+    }
 }
 

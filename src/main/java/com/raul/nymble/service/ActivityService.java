@@ -16,4 +16,6 @@ public interface ActivityService {
     Activity save(Activity activity);
 
     void delete(Long id);
+
+    void addPassengerToActivity(Long id, Long passengerId);
 }

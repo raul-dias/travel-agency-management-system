@@ -20,15 +20,17 @@ public class Activity {
     private String description;
     private Long cost;
     private int capasity;
-    private int destinationId;
+    private int bookedCapasity;
+    private Long destinationId;
 
     protected Activity() { }
 
-    public Activity(String name, String description, Long cost, int capasity, int destinationId) {
+    public Activity(String name, String description, Long cost, int capasity, Long destinationId) {
         this.name = name;
         this.description = description;
         this.cost = cost;
         this.capasity = capasity;
+        this.bookedCapasity = 0;
         this.destinationId = destinationId;
     }
 }
