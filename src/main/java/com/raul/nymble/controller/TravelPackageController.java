@@ -33,4 +33,9 @@ public class TravelPackageController {
     public void updateTravelPackage(@RequestBody TravelPackageDTO travelPackageDTO, @PathVariable Long id){
         travelPackageService.updateTravelPackage(travelPackageDTO, id);
     }
+
+    @PostMapping("/travelPackage/{id}/enroll")
+    public void addPassengerToPackage(@PathVariable Long id, @RequestBody Long passengerId){
+        travelPackageService.addPassengerToPackage(id, passengerId);
+    }
 }

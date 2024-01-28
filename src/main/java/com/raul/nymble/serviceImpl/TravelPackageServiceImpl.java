@@ -133,6 +133,11 @@ public class TravelPackageServiceImpl implements TravelPackageService {
         System.out.println("Travel Package updated successfully");
     }
 
+    @Override
+    public void addPassengerToPackage(Long id, Long passengerId) {
+        packageEnrollmentRepository.save(new PackageEnrollment(passengerId, id));
+    }
+
     /**
      * Function to get itineraries by travel package id
      * we pass the Travel Package id here

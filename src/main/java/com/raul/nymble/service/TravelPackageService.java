@@ -15,4 +15,6 @@ public interface TravelPackageService {
 
 
     void updateTravelPackage(TravelPackageDTO travelPackageDTO, Long id);
+
+    void addPassengerToPackage(Long id, Long passengerId);
 }
