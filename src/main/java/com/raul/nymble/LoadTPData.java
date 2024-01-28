@@ -45,9 +45,9 @@ public class LoadTPData {
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 2L)));
             log.info("Enrollments" + packRepo.save(new PackageEnrollment(3L, 3L)));
             log.info("-------------------------Adding Activities----------------------------");
-            log.info("Activities" + activityRepo.save(new Activity("Bunjee Jumping", "Jumping from Bunjees", 20L, 59, 1)));
-            log.info("Activities" + activityRepo.save(new Activity("Horse Riding", "Riding Horses", 20L, 59, 1)));
-            log.info("Activities" + activityRepo.save(new Activity("Dirt Bike Riding", "Riding Dirt Bikes", 20L, 59, 2)));
+            log.info("Activities" + activityRepo.save(new Activity("Bunjee Jumping", "Jumping from Bunjees", 20L, 59, 1L)));
+            log.info("Activities" + activityRepo.save(new Activity("Horse Riding", "Riding Horses", 20L, 59, 1L)));
+            log.info("Activities" + activityRepo.save(new Activity("Dirt Bike Riding", "Riding Dirt Bikes", 20L, 59, 2L)));
         };
     }
 }
