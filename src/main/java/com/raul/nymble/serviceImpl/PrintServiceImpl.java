@@ -19,14 +19,15 @@ import com.raul.nymble.service.PassengerService;
 import com.raul.nymble.service.PrintService;
 import com.raul.nymble.service.TravelPackageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class PrintServiceImpl implements PrintService {
 
-    @Autowired
-    TravelPackageRepository travelPackageRepository;
     @Autowired
     ActivityRepository activiryRepository;
     @Autowired
