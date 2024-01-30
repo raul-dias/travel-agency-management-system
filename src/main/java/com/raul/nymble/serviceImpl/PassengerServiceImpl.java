@@ -39,7 +39,7 @@ public class PassengerServiceImpl implements PassengerService {
             }
         }));
         if (destinationValid.get() && (passenger.getBalance() >= cost)) {
-            passenger.setBalance(passenger.getBalance() - cost);
+            passenger.setBalance(passenger.getBalance() - (cost*PassengerService.getDiscount(passenger)));
             passengerRepository.save(passenger);
             return true;
         }

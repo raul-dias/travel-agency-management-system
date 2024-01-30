@@ -11,7 +11,7 @@ import java.util.List;
 public class PrintPassengerDetails {
     private String name;
     private int number;
-    private Long balance;
+    private Double balance;
     private List<ActivityDetailsDTO> activityDetailsList;
 
     public PrintPassengerDetails(Passenger passenger) {

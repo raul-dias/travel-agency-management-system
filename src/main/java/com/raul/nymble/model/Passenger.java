@@ -23,7 +23,7 @@ public class Passenger {
     private String name;
     private int number;
     private tierEnum tier;
-    private Long balance;
+    private Double balance;
 
     public Passenger() { }
 
@@ -34,7 +34,7 @@ public class Passenger {
         this.balance = passenger.balance;
     }
 
-    public Passenger(String name, int number, int tier, Long balance) {
+    public Passenger(String name, int number, int tier, Double balance) {
         this.name = name;
         this.number = number;
         switch (tier) {
